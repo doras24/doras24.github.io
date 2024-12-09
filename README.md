@@ -13,6 +13,7 @@ Maltese dogs are social animals and thrive on human companionship. They are also
 
 If you are a lover of Maltese dogs, please fill out the form below and we will contact you with more information!
 
-https://forms.infobip.com/forms/552d5c51-c4d0-4b95-bfcf-392f1eb10f1e.js
+<div id="form-552d5c51-c4d0-4b95-bfcf-392f1eb10f1e"></div>
+<script async src="https://forms.infobip.com/forms/552d5c51-c4d0-4b95-bfcf-392f1eb10f1e.js"></script>
 
 
