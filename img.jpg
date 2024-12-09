@@ -9,11 +9,10 @@
     <h1>Adorable Maltese Dog</h1>
     <p>Here's a picture of a beautiful Maltese dog:</p>
 
-    <img src="https://fishsubsidy.org/wp-content/uploads/2020/01/maltese-dog-history.jpg" 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Maltese_dog_800.jpg/640px-Maltese_dog_800.jpg" 
          alt="Maltese Dog" 
          width="500">
 
     <p>Source: <a href="https://www.bing.com/images/search?view=detailV2&ccid=vhElMZ28&id=3EF9A2B3D2F0068ABC75239DB1EB9639CA54D6D3&thid=OIP.vhElMZ28-KcyaEnnl1g3VwHaEK">Bing Images</a></p>
 </body>
 </html>
-
