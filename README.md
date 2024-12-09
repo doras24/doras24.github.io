@@ -18,10 +18,11 @@ If you are a lover of Maltese dogs, please fill out the form below and we will c
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>doras24.github.io</title>
+    <title>My Website</title>
 </head>
 <body>
-<div id="form-09d74023-2b37-451d-9019-6c705cbe349b"></div>
-<script async src="https://forms.infobip.com/forms/09d74023-2b37-451d-9019-6c705cbe349b.js"></script>
+    <h1>Welcome to My Page</h1>
+    <div id="form-09d74023-2b37-451d-9019-6c705cbe349b"></div>
+    <script async src="https://forms.infobip.com/forms/09d74023-2b37-451d-9019-6c705cbe349b.js"></script>
 </body>
 </html>
