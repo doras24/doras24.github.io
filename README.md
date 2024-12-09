@@ -12,6 +12,6 @@ Exercise: Daily walks and playtime keep them happy and healthy
 Maltese dogs are social animals and thrive on human companionship. They are also hypoallergenic, making them a great choice for people with allergies.
 
 If you are a lover of Maltese dogs, please fill out the form below and we will contact you with more information!
-[Visit the live website](https://doras24.github.io)
+(https://github.com/doras24/doras24.github.io/blob/main/index.html))
 
 
