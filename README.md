@@ -21,7 +21,6 @@ If you are a lover of Maltese dogs, please fill out the form below and we will c
     <title>My Website</title>
 </head>
 <body>
-    <h1>Contact Us</h1>
     
     <!-- Infobip Form Embed Code -->
     <div id="form-552d5c51-c4d0-4b95-bfcf-392f1eb10f1e"></div>
