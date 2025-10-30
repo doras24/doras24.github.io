@@ -1,33 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infobip Form</title>
+    <title>Infobip Live Chat Demo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f4f4f9;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0064ff, #00c6ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        #form-container {
-            width: 100%;
+
+        header {
+            background-color: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #0064ff;
+            font-size: 1.8rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        main p {
             max-width: 600px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+            color: #555;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+        }
+
+        footer a {
+            color: #0064ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div id="form-container">
-        <div id="form-5945875d-efca-46ba-a6fa-e05d377790e4"></div>
-        <script async src="https://forms.infobip.com/forms/5945875d-efca-46ba-a6fa-e05d377790e4.js"></script>
-    </div>
+
+    <header>
+        <h1>Dobrodošli na našu stranicu</h1>
+    </header>
+
+    <main>
+        <h2>Infobip Live Chat je aktivan 💬</h2>
+        <p>
+            Ako imate bilo kakvo pitanje, kliknite na chat ikonu u donjem desnom kutu zaslona
+            i razgovarajte s našim timom uživo. Ova stranica koristi Infobipov widget za live chat.
+        </p>
+    </main>
+
+    <footer>
+        © 2025 Moja Tvrtka | <a href="https://www.infobip.com" target="_blank">Powered by Infobip</a>
+    </footer>
+
+    <!-- INFObip Live Chat widget -->
+    <script>
+        (function(I,n,f,o,b,i,p){
+            I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
+            I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
+            p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)
+        })(window,document,'script','https://livechat.infobip.com/widget.js','liveChat');
+
+        liveChat('init', '04928764-e25f-4563-9fac-8776d6f3dde2');
+    </script>
+
 </body>
 </html>
