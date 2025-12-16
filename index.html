@@ -49,6 +49,32 @@
             font-size: 1.1rem;
         }
 
+        /* Viber button */
+        .viber-button {
+            margin-top: 30px;
+            background-color: #7360f2;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .viber-button:hover {
+            background-color: #5d4bd6;
+        }
+
+        .viber-note {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         footer {
             background-color: white;
             text-align: center;
@@ -81,17 +107,26 @@
             and talk to our team live. This page uses Infobip’s Live Chat widget.
         </p>
 
-        <!-- INFObip Form -->
+        <!-- Viber Deep Link Button -->
+        <a class="viber-button" href="viber://pa?chatURI=CrnogorskiTelekom">
+            💜 Chat with us on Viber
+        </a>
+        <div class="viber-note">
+            Available on mobile devices with Viber installed
+        </div>
+
+        <!-- Infobip Form -->
         <div id="form-485d2ce2-e787-406a-bfda-590a00f94e5a"></div>
         <script async src="https://forms.infobip.com/forms/485d2ce2-e787-406a-bfda-590a00f94e5a.js"></script>
 
     </main>
 
     <footer>
-        © 2025 My Company | <a href="https://www.infobip.com" target="_blank">Powered by Infobip</a>
+        © 2025 My Company |
+        <a href="https://www.infobip.com" target="_blank">Powered by Infobip</a>
     </footer>
 
-    <!-- INFObip Live Chat widget -->
+    <!-- Infobip Live Chat widget -->
     <script>
         (function(I,n,f,o,b,i,p){
             I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
@@ -104,5 +139,6 @@
 
 </body>
 </html>
+
 
 
