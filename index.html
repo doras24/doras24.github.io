@@ -1,144 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infobip Live Chat Demo</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #0064ff, #00c6ff);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infobip Live Chat Demo</title>
 
-        header {
-            background-color: white;
-            padding: 20px 40px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0064ff, #00c6ff);
+    color: #333;
+    min-height: 100vh;
+}
 
-        header h1 {
-            margin: 0;
-            color: #0064ff;
-            font-size: 1.8rem;
-        }
+/* Floating Viber Button */
+.viber-float {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #7360f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    cursor: pointer;
+}
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 40px 20px;
-        }
+.viber-float img {
+    width: 32px;
+    height: 32px;
+}
 
-        main h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
+.viber-float:hover {
+    background-color: #5d4bd6;
+}
 
-        main p {
-            max-width: 600px;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
+/* Tooltip */
+.viber-tooltip {
+    position: absolute;
+    right: 70px;
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
 
-        /* Viber button */
-        .viber-button {
-            margin-top: 30px;
-            background-color: #7360f2;
-            color: white;
-            padding: 15px 28px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+.viber-float:hover .viber-tooltip {
+    opacity: 1;
+}
 
-        .viber-button:hover {
-            background-color: #5d4bd6;
-        }
+/* QR Modal */
+.qr-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
 
-        .viber-note {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+.qr-content {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 320px;
+}
 
-        footer {
-            background-color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 0.9rem;
-            color: #555;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-        }
+.qr-content h3 {
+    margin-top: 0;
+    color: #7360f2;
+}
 
-        footer a {
-            color: #0064ff;
-            text-decoration: none;
-        }
+.qr-content img {
+    width: 220px;
+    margin: 15px 0;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+.qr-close {
+    margin-top: 10px;
+    background: #7360f2;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Welcome to our website</h1>
-    </header>
+<!-- Floating Viber Button -->
+<div class="viber-float" onclick="openViber()">
+    <span class="viber-tooltip">Chat with us on Viber</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Viber_logo_2018.svg" alt="Viber">
+</div>
 
-    <main>
-        <h2>Infobip Live Chat is active 💬</h2>
-        <p>
-            If you have any questions, click the chat icon in the bottom right corner
-            and talk to our team live. This page uses Infobip’s Live Chat widget.
-        </p>
+<!-- QR Modal -->
+<div class="qr-modal" id="qrModal">
+    <div class="qr-content">
+        <h3>Chat with us on Viber</h3>
+        <p>Scan the QR code with your phone</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=viber://pa?chatURI=CrnogorskiTelekom" alt="Viber QR">
+        <br>
+        <button class="qr-close" onclick="closeQR()">Close</button>
+    </div>
+</div>
 
-        <!-- Viber Deep Link Button -->
-        <a class="viber-button" href="viber://pa?chatURI=CrnogorskiTelekom">
-            💜 Chat with us on Viber
-        </a>
-        <div class="viber-note">
-            Available on mobile devices with Viber installed
-        </div>
+<script>
+function openViber() {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        <!-- Infobip Form -->
-        <div id="form-485d2ce2-e787-406a-bfda-590a00f94e5a"></div>
-        <script async src="https://forms.infobip.com/forms/485d2ce2-e787-406a-bfda-590a00f94e5a.js"></script>
+    if (isMobile) {
+        window.location.href = "viber://pa?chatURI=CrnogorskiTelekom";
+    } else {
+        document.getElementById("qrModal").style.display = "flex";
+    }
+}
 
-    </main>
+function closeQR() {
+    document.getElementById("qrModal").style.display = "none";
+}
+</script>
 
-    <footer>
-        © 2025 My Company |
-        <a href="https://www.infobip.com" target="_blank">Powered by Infobip</a>
-    </footer>
+<!-- Infobip Live Chat widget -->
+<script>
+(function(I,n,f,o,b,i,p){
+    I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
+    I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
+    p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)
+})(window,document,'script','https://livechat.infobip.com/widget.js','liveChat');
 
-    <!-- Infobip Live Chat widget -->
-    <script>
-        (function(I,n,f,o,b,i,p){
-            I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
-            I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
-            p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)
-        })(window,document,'script','https://livechat.infobip.com/widget.js','liveChat');
-
-        liveChat('init', '04928764-e25f-4563-9fac-8776d6f3dde2');
-    </script>
+liveChat('init', '04928764-e25f-4563-9fac-8776d6f3dde2');
+</script>
 
 </body>
 </html>
+
 
 
 
