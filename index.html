@@ -14,7 +14,31 @@ body {
     min-height: 100vh;
 }
 
-/* Floating Viber Button */
+/* ===== FORM WRAPPER ===== */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 70px 20px 120px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px;
+    max-width: 680px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+.form-card h2 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0064ff;
+}
+
+/* ===== FLOATING VIBER BUTTON ===== */
 .viber-float {
     position: fixed;
     bottom: 90px;
@@ -59,7 +83,7 @@ body {
     opacity: 1;
 }
 
-/* QR Modal */
+/* ===== QR MODAL ===== */
 .qr-modal {
     display: none;
     position: fixed;
@@ -102,11 +126,25 @@ body {
 
 <body>
 
+<!-- ===== FORM AREA ===== -->
+<div class="form-section">
+    <div class="form-card">
+        <h2>Contact Us</h2>
+
+        <!-- Infobip Web Form -->
+        <div id="form-dea61487-96c1-4b02-8a99-d985f7c3fac0"></div>
+    </div>
+</div>
+
+<script async src="https://forms.infobip.com/forms/dea61487-96c1-4b02-8a99-d985f7c3fac0.js"></script>
+
+<!-- ===== FLOATING VIBER BUTTON ===== -->
 <div class="viber-float" onclick="openViber()">
     <span class="viber-tooltip">Chat with us on Viber</span>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Viber_logo_2018.svg" alt="Viber">
 </div>
 
+<!-- ===== QR MODAL ===== -->
 <div class="qr-modal" id="qrModal">
     <div class="qr-content">
         <h3>Chat with us on Viber</h3>
@@ -133,6 +171,7 @@ function closeQR() {
 }
 </script>
 
+<!-- ===== INFOBIP LIVE CHAT WIDGET ===== -->
 <script>
 (function(I,n,f,o,b,i,p){
     I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
@@ -145,6 +184,8 @@ liveChat('init', '04928764-e25f-4563-9fac-8776d6f3dde2');
 
 </body>
 </html>
+
+
 
 
 
